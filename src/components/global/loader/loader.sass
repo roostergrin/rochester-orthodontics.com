@@ -1,0 +1,25 @@
+.loader
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 99999
+  width: 100%
+  height: 100%
+
+  &__left,
+  &__right
+    position: absolute
+    top: 0
+    transition: transform .75s ease-in
+    background: $white
+    width: 50%
+    height: 100%
+
+  &__left
+    &.animate
+      transform: translateX(-100%)
+
+  &__right
+    &.animate
+      transform: translateX(100%)
+    left: 50%

@@ -1,0 +1,91 @@
+// --------------------------------------------------------
+// clearfix
+// NOTE: for fallbacks with floats
+// --------------------------------------------------------
+
+.clearfix
+  &:after,
+  &:before
+    display: table
+    clear: both
+    content: ''
+
+// --------------------------------------------------------
+// classes
+// --------------------------------------------------------
+
+.container
+  display: block
+  margin: 0 auto
+  width: 100%
+  max-width: $width
+  &:after,
+  &:before
+    display: table
+    clear: both
+    content: ''
+
+  @media screen and (max-width: $max-width)
+    padding: 0 calc(#{$gutter} / 2)
+
+  @supports (display: flex)
+    display: flex
+    flex-wrap: wrap
+    align-items: stretch
+    justify-content: flex-start
+    width: 100%
+    max-width: calc(#{$width} + #{$gutter})
+    &:before,
+    &:after
+      display: none
+
+  @supports (display: grid)
+    display: grid
+    width: 100%
+    max-width: $width
+    grid-template-columns: repeat($columns, [col-start] 1fr)
+    grid-column-gap: $gutter
+    grid-row-gap: 0
+    &:before,
+    &:after
+      display: none
+    @media screen and (max-width: $screen-sm)
+      grid-column-gap: 0
+
+  &.container-large
+    display: block
+    margin: 0 auto
+    width: 100%
+    max-width: $width-large
+    &:after,
+    &:before
+      display: table
+      clear: both
+      content: ''
+
+    @media screen and (max-width: $max-width)
+      padding: 0 calc(#{$gutter} / 2)
+
+    @supports (display: flex)
+      display: flex
+      flex-wrap: wrap
+      align-items: stretch
+      justify-content: flex-start
+      width: 100%
+      max-width: calc(#{$width-large} + #{$gutter})
+      &:before,
+      &:after
+        display: none
+
+    @supports (display: grid)
+      display: grid
+      width: 100%
+      max-width: $width-large
+      grid-template-columns: repeat($columns-large, [col-start] 1fr)
+      grid-column-gap: $gutter
+      grid-row-gap: 0
+      &:before,
+      &:after
+        display: none
+      @media screen and (max-width: $screen-sm)
+        grid-column-gap: 0

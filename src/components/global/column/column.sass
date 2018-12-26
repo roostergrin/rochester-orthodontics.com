@@ -1,0 +1,79 @@
+// --------------------------------------------------------
+// Columns
+// --------------------------------------------------------
+
+$half: $columns / 2
+
+@for $i from 1 through $columns
+  .col-#{$i}
+    float: left
+    padding-right: calc(#{$gutter}/2)
+    padding-left: calc(#{$gutter}/2)
+    width: calc(#{$i} / #{$columns} * 100%)
+
+    @supports(display: grid)
+      padding-right: 0
+      padding-left: 0
+      width: 100%
+      grid-column-end: span $i
+
+    @if $i <= $half
+      @include tablet
+        width: 50%
+
+        @supports(display: grid)
+          width: 100%
+          grid-column-end: span $half
+
+      @include phone
+        width: 100%
+
+        @supports(display: grid)
+          padding-right: 0
+          padding-left: 0
+          width: 100%
+          grid-column-end: span $columns
+
+    @media screen and (max-width: $screen-sm)
+      width: 100%
+
+      @supports(display: grid)
+        padding-right: 0
+        padding-left: 0
+        width: 100%
+        grid-column-end: span $columns
+
+    .container-large &
+      width: calc(#{$i} / #{$columns-large} * 100%)
+
+      @supports(display: grid)
+        padding-right: 0
+        padding-left: 0
+        width: 100%
+        grid-column-end: span $i
+
+      @if $i <= $half
+        @include tablet
+          width: 50%
+
+          @supports(display: grid)
+            width: 100%
+            grid-column-end: span $half
+
+        @include phone
+          width: 100%
+
+          @supports(display: grid)
+            padding-right: 0
+            padding-left: 0
+            width: 100%
+            grid-column-end: span $columns
+
+      @media screen and (max-width: $screen-sm)
+        width: 100%
+
+        @supports(display: grid)
+          padding-right: 0
+          padding-left: 0
+          width: 100%
+          grid-column-end: span $columns

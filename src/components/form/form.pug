@@ -1,0 +1,33 @@
+.form
+  transition(name='fade-in')
+    .form__thank-you(v-if='formSuccess && formSubmitted') Thank you for Contacting Us!
+  transition(name='fade-in')
+    .form__sending-overlay(v-if='!formSuccess && formSubmitted')
+      .form__sending Sending
+        span .
+        span .
+        span .
+  form.form__form(v-if='!formSubmitted')
+    
+    .form__group
+      input.form__input(name='firstName', v-model='firstName', v-validate="'required|alpha_spaces'", :class="{ 'form__input--error': errors.has('firstName') }", type='text', placeholder='First Name')
+      .form__message
+          span(v-show="errors.has('firstName')") Your first name is required.
+            
+    .form__group
+      input.form__input(name='lastName', v-model='lastName', v-validate="'required|alpha_spaces'", :class="{ 'form__input--error': errors.has('lastName') }", type='text', placeholder='Last Name')
+      .form__message
+          span(v-show="errors.has('lastName')") Your last name is required.
+    
+    .form__group
+      input.form__input(name='clientEmail', v-model='clientEmail', v-validate="'required|email'", :class="{ 'input': true, 'form__input--error': errors.has('clientEmail') }", placeholder='E-mail')
+      .form__message
+        span(v-show="errors.has('clientEmail')") Please Input a Valid Email
+    
+    .form__group
+      input.form__input(name='clientPhone', v-model='clientPhone', v-validate="'required|numeric'", :class="{ 'input': true, 'form__input--error': errors.has('clientPhone') }", placeholder='Phone')
+      .form__message
+        span(v-show="errors.has('clientPhone')") Please Input a Valid Phone Number
+    
+    .form__button-group
+      .form__button(@click='validate') Request
