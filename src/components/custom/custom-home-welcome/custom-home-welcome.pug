@@ -3,6 +3,12 @@
     Column(:cols='4', :off='1')
       LazyImage(:loSrc='content.image.sizes.medium', :highSrc='content.image.url')
     Column(:cols='6')
-      .custom-home-welcome__title(v-html='content.title')
-      .custom-home-welcome__title(v-html='content.subtitle')
-      .custom-home-welcome__title(v-html='content.body')
+      .custom-home-welcome__content-box
+        .custom-home-welcome__title(v-html='content.title')
+        .custom-home-welcome__subtitle(v-html='content.subtitle')
+        .custom-home-welcome__body(v-html='content.body')
+        .custom-home-welcome__tiles
+          .custom-home-welcome__tile(v-for="(tile, i) in content.tiles", :key='i')
+            Icon.custom-home-welcome__tile-icon(:name='tile.icon')
+            .custom-home-welcome__tile-title(v-html='tile.title')
+            .custom-home-welcome__tile-body(v-html='tile.body')

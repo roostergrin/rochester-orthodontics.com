@@ -21,6 +21,8 @@ export default {
   data () {
     return {
       loaded: false,
+      width: null,
+      height: null,
       intersectionOptions: {
         root: null,
         rootMargin: '0px 0px 0px 0px',
@@ -29,9 +31,8 @@ export default {
     }
   },
   mounted () {
-    setTimeout(() => {
-      console.log(this.$refs)
-    }, 500)
+    this.width = this.$refs.image.clientWidth
+    this.height = this.$refs.image.clientHeight
   },
   methods: {
     onWaypoint ({ going, direction }) {
