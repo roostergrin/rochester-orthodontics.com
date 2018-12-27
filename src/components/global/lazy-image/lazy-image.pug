@@ -1,0 +1,3 @@
+.lazy-image
+  .lazy-image__trigger(v-waypoint="{ active: true, callback: onWaypoint, options: intersectionOptions }" v-if='!loaded')
+  img(:src='loaded ? highSrc : loSrc', :class="{ cover: imageFit === 'cover', contain: imageFit === 'contain', loaded: loaded }")

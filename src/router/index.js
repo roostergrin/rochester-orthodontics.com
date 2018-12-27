@@ -18,37 +18,37 @@ const router = new VueRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
-      navigation: true,
+      name: 'Home',
+      navigation: false,
       component: Home
     },
     {
       path: '/get-started',
-      name: 'get started!',
+      name: 'Get Started!',
       navigation: true,
       component: GetStarted
     },
     {
       path: '/about',
-      name: 'about',
+      name: 'About',
       navigation: true,
       component: About
     },
     {
       path: '/treatments',
-      name: 'treatments',
+      name: 'Treatments',
       navigation: true,
       component: Treatments
     },
     {
       path: '/invisalign',
-      name: 'invisalign',
+      name: 'Invisalign',
       navigation: true,
       component: Invisalign
     },
     {
       path: '/contact',
-      name: 'contact',
+      name: 'Contact',
       navigation: true,
       component: Contact
     },

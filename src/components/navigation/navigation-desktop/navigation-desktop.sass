@@ -1,3 +1,64 @@
 .navigation-desktop
-  span
-    margin: auto rem-calc(6)
+  @extend .flex-center-between
+  position: fixed
+  top: 0
+  left: 0
+  transform: translateZ(0)
+  padding: 1rem
+  width: 100%
+
+  &__logo-icon
+    @include svg-size(13rem, 6rem)
+
+  &__content
+    display: flex
+    flex-direction: column
+
+  &__content-top
+    @extend .flex-center-end
+
+  &__content-bottom
+    @extend .flex-center-end
+    position: relative
+    padding-top: 1rem
+
+  &__link
+    @extend h3
+    position: relative
+    padding-left: 2rem
+    text-align: right
+    text-transform: capitalize
+    color: $white
+    font-size: 24px
+
+    &:after
+      display: block
+      visibility: hidden
+      height: 0
+      overflow: hidden
+      font-weight: bold
+      content: attr(title)
+
+    &:first-child
+      padding-left: 0
+
+    &.router-link-exact-active
+      @extend h2
+      font-size: 24px
+
+  &__phone
+    @extend h3
+    @extend .flex-center
+    color: $white
+    font-size: 24px
+
+  &__phone-icon
+    @include svg-size(1.5rem, 1.5rem)
+    margin-right: .5rem
+
+  &__appointment
+    position: absolute
+    top: 50%
+    right: 0
+    transform: translateY(-50%)
+    opacity: 0

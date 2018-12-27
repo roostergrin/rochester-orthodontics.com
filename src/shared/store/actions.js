@@ -26,7 +26,7 @@ const actions = {
         }
 
         const data = response.data.reduce(
-          (allData, data) => ({ ...allData, [data.slug]: {title: data.title.rendered, ...data.acf} }),
+          (allData, data) => ({ ...allData, [data.slug]: { title: data.title.rendered, ...data.acf } }),
           {}
         )
         commit(GET_PAGES, data)
@@ -40,7 +40,7 @@ const actions = {
       try {
         const response = await axios.get(`${api}/wp/v2/app`)
         const data = response.data.reduce(
-          (allData, data) => ({ ...allData, [data.slug]: data }),
+          (allData, data) => ({ ...allData, [data.slug]: { ...data.acf } }),
           {}
         )
         commit(GET_APP, data)

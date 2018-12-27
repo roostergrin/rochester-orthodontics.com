@@ -1,0 +1,8 @@
+.custom-home-welcome
+  Container
+    Column(:cols='4', :off='1')
+      LazyImage(:loSrc='content.image.sizes.medium', :highSrc='content.image.url')
+    Column(:cols='6')
+      .custom-home-welcome__title(v-html='content.title')
+      .custom-home-welcome__title(v-html='content.subtitle')
+      .custom-home-welcome__title(v-html='content.body')

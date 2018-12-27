@@ -1,3 +1,4 @@
-.pages-home 
+.pages-home(v-if='props && !loading')
   h1 Hello World
+  CustomHomeWelcome(:content='props.welcome')
   pre {{ props }}
