@@ -1,3 +1,4 @@
 .pages-home(v-if='props && !loading')
   CustomHomeWelcome(:content='props.welcome')
+  BlockSection(:content='props.section')
   pre {{ props }}

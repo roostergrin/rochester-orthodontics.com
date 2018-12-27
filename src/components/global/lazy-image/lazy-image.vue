@@ -36,8 +36,10 @@ export default {
     }
   },
   mounted () {
-    this.width = this.$refs.image.clientWidth
-    this.height = this.$refs.image.clientHeight
+    setTimeout(() => {
+        this.width = this.$refs.image.clientWidth
+        this.height = this.$refs.image.clientHeight
+    }, 100)
   },
   methods: {
     onWaypoint ({ going, direction }) {

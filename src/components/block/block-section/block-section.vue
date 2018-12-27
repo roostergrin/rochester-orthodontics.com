@@ -2,6 +2,19 @@
 
 <script>
 export default {
-  props: ['content']
+  props: {
+    content: {
+      type: Object,
+      default () {
+        return null
+      }
+    },
+    alt: {
+      type: Boolean,
+      default () {
+        return false
+      }
+    }
+  }
 }
 </script>

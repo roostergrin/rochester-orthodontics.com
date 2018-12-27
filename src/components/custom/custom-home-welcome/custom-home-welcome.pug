@@ -1,7 +1,8 @@
 .custom-home-welcome
+  Icon.custom-home-welcome__icon(:name='content.icon')
   Container
     Column(:cols='4', :off='1')
-      LazyImage(:src='content.image')
+      LazyImage.custom-home-welcome__image(:src='content.image')
     Column(:cols='6')
       .custom-home-welcome__content-box
         .custom-home-welcome__title(v-html='content.title')

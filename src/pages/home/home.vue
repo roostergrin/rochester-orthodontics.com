@@ -1,6 +1,7 @@
 <template lang="pug" src="./home.pug"></template>
 
 <script>
+import BlockSection from 'components/block/block-section/block-section'
 import CustomHomeWelcome from 'components/custom/custom-home-welcome/custom-home-welcome'
 
 export default {
@@ -14,6 +15,7 @@ export default {
     }
   },
   components: {
+    BlockSection,
     CustomHomeWelcome
   }
 }
