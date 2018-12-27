@@ -1,16 +1,21 @@
 <template lang='pug' src='./lazy-image.pug'></template>
 
 <script>
+import ErrorPng from '@/assets/error.png'
+
 export default {
   props: {
-    loSrc: {
-      type: String,
-      default: '@/assets/error.png',
-      required: true
-    },
-    highSrc: {
-      type: String,
-      default: '@/assets/error.png',
+    src: {
+      type: Object,
+      default () {
+        return {
+          url: ErrorPng,
+          sizes: {
+            medium: ErrorPng
+          },
+          alt: 'default image'
+        }
+      },
       required: true
     },
     imageFit: {
