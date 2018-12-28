@@ -39,7 +39,7 @@ export default {
   },
   mounted () {
     let intervalTime = setInterval(() => {
-      if (this.$refs.image.naturalWidth > 0 && this.$refs.image.naturalHeight > 0) {
+      if (this.$refs.image.naturalWidth > 0 && this.$refs.image.naturalHeight > 0 && this.$refs.image.naturalWidth !== undefined && this.$refs.image.naturalHeight !== undefined) {
         this.setSizing()
         clearInterval(intervalTime)
       }
