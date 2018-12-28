@@ -2,6 +2,7 @@
 
 <script>
 import BlockSection from 'components/block/block-section/block-section'
+import BlockTiles from 'components/block/block-tiles/block-tiles'
 import CustomHomeWelcome from 'components/custom/custom-home-welcome/custom-home-welcome'
 
 export default {
@@ -16,6 +17,7 @@ export default {
   },
   components: {
     BlockSection,
+    BlockTiles,
     CustomHomeWelcome
   }
 }

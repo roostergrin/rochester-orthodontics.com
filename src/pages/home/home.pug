@@ -1,4 +1,5 @@
 .pages-home(v-if='props && !loading')
   CustomHomeWelcome(:content='props.welcome')
+  BlockTiles(:content='props.tiles')
   BlockSection(:content='props.section')
-  pre {{ props }}
+  pre {{ props.testimonials }}

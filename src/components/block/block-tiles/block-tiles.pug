@@ -1,0 +1,9 @@
+.block-tiles
+  .block-tiles__tile(v-for='(tile, i) in content', :key='i', :class="{ 'block-tiles__tile--alt': tile.image }")
+    .block-tiles__tile-overlay(v-if='tile.image')
+    LazyImage.block-tiles__tile-image(:src='tile.image' v-if='tile.image')
+    .block-tiles__tile-title(v-html='tile.title')
+    .block-tiles__tile-body(v-html='tile.body')
+    router-link.block-tiles__tile-button(:to='tile.button.href', v-if='tile.button.href' v-html='tile.button.label')
+    .block-tiles__tile-button(v-if='!tile.button.href' v-html='tile.button.label')
+      

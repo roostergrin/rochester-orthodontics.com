@@ -28,6 +28,8 @@ export default {
       loaded: false,
       width: null,
       height: null,
+      naturalWidth: null,
+      naturalHeight: null,
       intersectionOptions: {
         root: null,
         rootMargin: '0px 0px 0px 0px',
@@ -36,9 +38,11 @@ export default {
     }
   },
   mounted () {
-    setTimeout(() => {
-        this.width = this.$refs.image.clientWidth
-        this.height = this.$refs.image.clientHeight
+    let intervalTime = setInterval(() => {
+      if (this.$refs.image.naturalWidth > 0 && this.$refs.image.naturalHeight > 0) {
+        this.setSizing()
+        clearInterval(intervalTime)
+      }
     }, 100)
   },
   methods: {
@@ -46,6 +50,12 @@ export default {
       if (going === this.$waypointMap.GOING_IN) {
         this.loaded = true
       }
+    },
+    setSizing () {
+      this.width = this.$refs.container.clientWidth
+      this.height = this.$refs.container.clientHeight
+      this.naturalWidth = this.$refs.image.naturalWidth
+      this.naturalHeight = this.$refs.image.naturalHeight
     }
   }
 }
