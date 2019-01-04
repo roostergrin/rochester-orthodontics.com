@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import VeeValidate from 'vee-validate'
 import VueWaypoint from 'vue-waypoint'
+import { sync } from 'vuex-router-sync'
+import router from '../router'
+import store from '../shared/store'
 // import VueAwesomeSwiper from 'vue-awesome-swiper'
 // import 'swiper/dist/css/swiper.css'
 // import VueScrollTo from 'vue-scrollto'
@@ -8,6 +11,7 @@ import VueWaypoint from 'vue-waypoint'
 // import VueAxe from 'vue-axe'
 
 const vendors = () => {
+  sync(store, router)
   Vue.use(VeeValidate)
   Vue.use(VueWaypoint)
   // Vue.use(VueAwesomeSwiper, /* { default global options } */)

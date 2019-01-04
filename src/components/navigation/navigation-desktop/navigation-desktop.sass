@@ -4,11 +4,27 @@
   top: 0
   left: 0
   transform: translateZ(0)
+  transition: background .25s ease-in
+  z-index: 9998
   padding: 1rem
   width: 100%
 
+  &--scrolled
+    background: $light-grey-blue
+
   &__logo-icon
     @include svg-size(13rem, 6rem)
+    transition: fill .25s ease-in
+
+    .navigation-desktop--scrolled &
+      .logo-0
+        fill: $white-30
+        stroke: $white-30
+      .logo-1
+        fill: $white-30
+        stroke: $white-30
+      .logo-text
+        fill: $white
 
   &__content
     display: flex
@@ -16,11 +32,14 @@
 
   &__content-top
     @extend .flex-center-end
+    padding-bottom: 1rem
+
+    .navigation-desktop--scrolled &
+      padding-bottom: 1.5rem
 
   &__content-bottom
     @extend .flex-center-end
     position: relative
-    padding-top: 1rem
 
   &__link
     @extend h3
@@ -30,6 +49,9 @@
     text-transform: capitalize
     color: $white
     font-size: 24px
+
+    .navigation-desktop--scrolled &
+      font-size: 20px
 
     &:after
       display: block
@@ -49,12 +71,22 @@
   &__phone
     @extend h3
     @extend .flex-center
+    transition: transform .25s ease-in
     color: $white
     font-size: 24px
+
+    .navigation-desktop--scrolled &
+      transform: translateX(-13rem)
+      font-size: 20px
 
   &__phone-icon
     @include svg-size(1.5rem, 1.5rem)
     margin-right: .5rem
+
+    .navigation-desktop--scrolled &
+      @include svg-size(1.25rem, 1.25rem)
+      .phone-1
+        fill: $marine
 
   &__appointment
     position: absolute
@@ -62,3 +94,10 @@
     right: 0
     transform: translateY(-50%)
     opacity: 0
+    border-radius: 5px
+    background: $marine
+    padding: .5rem 1rem
+    color: $white
+
+    .navigation-desktop--scrolled &
+      opacity: 1

@@ -1,4 +1,4 @@
-.navigation-desktop(v-if='content')
+.navigation-desktop(v-if='content', :class="{ 'navigation-desktop--scrolled': $store.state.nav }")
   router-link.navigation-desktop__logo(:to='content.logo.href')
     Icon.navigation-desktop__logo-icon(:name='content.logo.icon')
   .navigation-desktop__content
