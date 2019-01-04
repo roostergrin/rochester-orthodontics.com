@@ -1,0 +1,52 @@
+.custom-about-doctor
+  position: relative
+  padding: 6rem 0
+
+  &__title
+    @extend h1
+    padding-top: 2rem
+
+  &__subtitle
+    @extend h1
+    padding-left: 2rem
+    font-size: 18px
+
+  &__body
+    padding-top: 2rem
+    padding-bottom: 2rem
+
+  &__image
+    min-height: 20rem
+
+  &__tiles
+    @extend .flex-start-between
+    @include tablet
+      display: block
+      padding-bottom: 0
+    padding-bottom: 4rem
+
+  &__tile
+    @include tablet
+      padding-bottom: 1rem
+      width: 100%
+      max-width: none
+    display: block
+    width: 50%
+    max-width: 50%
+
+  &__tile-icon
+    @include svg-size(3.5rem, 3.5rem)
+
+  &__tile-title
+    @extend h3
+    padding: .5rem 0
+
+  &__icon
+    @include svg-size(28rem, 8rem)
+    @include tablet
+      @include svg-size(17rem, 4.75rem)
+    position: absolute
+    top: 0
+    left: 45%
+    transform: translateX(-50%)
+    z-index: 9

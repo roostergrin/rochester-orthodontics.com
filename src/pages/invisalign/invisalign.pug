@@ -1,5 +1,3 @@
-.pages-invisalign
-  Container 
-    Column(:cols='5', :off='1')
-      h1 Hello World
-  pre {{ props }}
+.pages-invisalign(v-if='!loading && props')
+  BlockGradient(:content='props.gradient')
+  pre {{ props.tiles }}

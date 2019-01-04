@@ -1,0 +1,12 @@
+.block-gradient
+  .block-gradient__overlay
+  .block-gradient__background
+    LazyImage(:src='content.image')
+  Container
+    Column(:cols='6')
+      .block-gradient__title(v-html='content.title')
+      .block-gradient__body(v-html='content.body')
+      .block-gradient__buttons
+        a.block-gradient__button(v-for='(button, i) in content.buttons', :key='i', :href='button.href', target='_blank' v-html='button.label')
+      
+  

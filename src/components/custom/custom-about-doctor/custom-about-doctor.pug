@@ -1,0 +1,14 @@
+.custom-about-doctor
+  Container
+    Column(:cols='4', :off='1')
+      LazyImage.custom-about-doctor__image(:src='content.image')
+    Column(:cols='6')
+      .custom-about-doctor__content-box
+        .custom-about-doctor__title(v-html='content.title')
+        .custom-about-doctor__subtitle(v-html='content.subtitle')
+        .custom-about-doctor__body(v-html='content.body')
+        .custom-about-doctor__tiles
+          .custom-about-doctor__tile(v-for="(tile, i) in content.tiles", :key='i')
+            Icon.custom-about-doctor__tile-icon(:name='tile.icon')
+            .custom-about-doctor__tile-title(v-html='tile.title')
+            .custom-about-doctor__tile-body(v-html='tile.body')
