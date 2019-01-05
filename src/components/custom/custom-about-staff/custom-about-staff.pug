@@ -1,0 +1,10 @@
+.custom-about-staff
+  Container
+    Column.custom-about-staff__tile-container(:cols='4' v-for='(tile, i) in content', :key='i')
+      .custom-about-staff__tile
+        .custom-about-staff__image
+          LazyImage(:src='tile.image')
+        .custom-about-staff__text-box
+          .custom-about-staff__name(v-html='tile.name', :title='tile.name')
+          .custom-about-staff__position(v-html='tile.position')
+          .custom-about-staff__bio(v-html='tile.bio')

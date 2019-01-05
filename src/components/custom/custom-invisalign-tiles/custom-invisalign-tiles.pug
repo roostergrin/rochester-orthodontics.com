@@ -1,0 +1,14 @@
+.custom-invisalign-tiles
+  Container.custom-invisalign-tiles__row(v-for='(row, i) in content', :key='i', :class="{ 'custom-invisalign-tiles__row--alt': i % 2 }")
+        
+    .custom-invisalign-tiles__image-box(v-if='!i % 2')
+      LazyImage.custom-invisalign-tiles__image(:src='row.image')
+    Column(:cols='4', :off='7' v-if='!i % 2')
+      .custom-invisalign-tiles__title(v-html='row.title')
+      .custom-invisalign-tiles__body(v-html='row.body')
+    
+    Column(:cols='4', :off='1' v-if='i % 2')
+      .custom-invisalign-tiles__title(v-html='row.title')
+      .custom-invisalign-tiles__body(v-html='row.body')
+    .custom-invisalign-tiles__image-box.custom-invisalign-tiles__image-box--alt(v-if='i % 2')
+      LazyImage.custom-invisalign-tiles__image(:src='row.image')

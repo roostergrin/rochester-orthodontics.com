@@ -3,6 +3,7 @@
 <script>
 import BlockFullWidth from 'components/block/block-full-width/block-full-width'
 import CustomAboutDoctor from 'components/custom/custom-about-doctor/custom-about-doctor'
+import CustomAboutStaff from 'components/custom/custom-about-staff/custom-about-staff'
 
 export default {
   name: 'Home',
@@ -16,7 +17,8 @@ export default {
   },
   components: {
     BlockFullWidth,
-    CustomAboutDoctor
+    CustomAboutDoctor,
+    CustomAboutStaff
   }
 }
 </script>
