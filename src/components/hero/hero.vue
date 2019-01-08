@@ -2,6 +2,6 @@
 
 <script>
 export default {
-  props: ['props']
+  props: ['content']
 }
 </script>

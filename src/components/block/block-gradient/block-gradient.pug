@@ -1,7 +1,7 @@
 .block-gradient
   .block-gradient__overlay
   .block-gradient__background
-    LazyImage(:src='content.image')
+    LazyImage.block-gradient__background-image(:src='content.image')
   Container
     Column(:cols='6')
       .block-gradient__title(v-html='content.title')

@@ -1,3 +1,7 @@
-.pages-treatment 
-  h1 treatment
-  pre {{ props }}
+.pages-treatment(v-if='props && !loading')
+  Hero(:content='props.hero')
+  BlockSection(:content='props.section')
+  BlockFullWidth(:content='props.f_width')
+  BlockGradient(:content='props.gradient')
+  BlockTiles(:content='props.tiles')
+  BlockSection(:content='props.section_2')

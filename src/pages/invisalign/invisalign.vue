@@ -3,6 +3,7 @@
 <script>
 import BlockGradient from 'components/block/block-gradient/block-gradient'
 import CustomInvisalignTiles from 'components/custom/custom-invisalign-tiles/custom-invisalign-tiles'
+import Hero from 'components/hero/hero'
 
 export default {
   name: 'invisalign',
@@ -16,7 +17,8 @@ export default {
   },
   components: {
     BlockGradient,
-    CustomInvisalignTiles
+    CustomInvisalignTiles,
+    Hero
   }
 }
 </script>

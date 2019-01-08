@@ -13,6 +13,10 @@
 
   &__icon
     @include svg-size(34rem, 7rem)
+    @include tablet
+      @include svg-size(25rem, 5rem)
+    @include phone
+      @include svg-size(16rem, 3rem)
     position: absolute
     top: 2rem
     left: 50%
@@ -32,6 +36,10 @@
     min-height: 25rem
 
   &__text-box
+    @include tablet
+      position: relative
+      width: 100%
+      min-height: 25rem
     position: absolute
     top: 0
     left: 0
@@ -82,6 +90,12 @@
       background: $marine
 
   &__image-box
+    @include tablet
+      position: relative
+      top: 0
+      bottom: 0
+      width: 100%
+      min-height: 15rem
     position: absolute
     top: 4rem
     right: 0

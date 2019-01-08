@@ -1,0 +1,123 @@
+.custom-about-apart
+
+  &__container
+    @include tablet
+      padding: 0 0 4rem
+    position: relative
+    padding: 6rem 0 8rem
+    max-width: 2056px
+
+  &__title
+    @extend h1
+    @include tablet
+      padding-top: 2rem
+    padding-bottom: 2rem
+
+  &__body
+    @include tablet
+      padding-bottom: 0
+    padding-bottom: 6rem
+
+  &__slider
+    @include tablet
+      position: relative
+      margin: auto
+      width: calc(100% - #{$gutter})
+      min-height: 20rem
+
+    position: absolute
+    top: 0
+    left: 0
+    width: 50%
+    height: 100%
+    overflow: hidden
+
+  &__image
+    @include tablet
+      height: calc(100% - 5rem)
+    position: absolute
+    top: 0
+    left: 0
+    transition: opacity .25s ease-in
+    opacity: 0
+    width: 100%
+    height: calc(100% - 8rem)
+
+    &--active
+      opacity: 1
+
+  &__slide-container
+    @include tablet
+      height: 5rem
+    position: absolute
+    bottom: 0
+    left: 0
+    z-index: 8
+    width: 75%
+    height: 8rem
+    overflow: hidden
+
+  &__slide-track
+    @include tablet
+      height: 5rem
+    display: block
+    position: relative
+    top: 0
+    left: 0
+    transition: transform .25s ease-in
+    height: 8rem
+
+  &__slide
+    @include tablet
+      height: 5rem
+    display: inline-block
+    position: relative
+    height: 8rem
+    overflow: hidden
+    filter: grayscale(.5)
+
+    &.active
+      filter: none
+
+  &__slide-thumb
+    @include tablet
+      max-height: 100%
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    min-width: 100%
+    min-height: 100%
+
+
+  &__slider-button
+    @include tablet
+      height: 5rem
+    position: absolute
+    right: 0
+    bottom: 0
+    z-index: 9
+    background: $cloudy-blue
+    width: 25%
+    height: 8rem
+
+    &:hover
+      .icon-fill
+        //sass-lint:disable-all
+        filter: url(#arrow-filter)
+        //sass-lint:enable-all
+    &:active
+      .icon-fill
+        filter: none
+
+  &__slider-icon
+    @include svg-size(6rem, 6rem)
+    @include tablet
+      @include svg-size(3rem, 3rem)
+    position: absolute
+    top: 50%
+    left: 55%
+    transform: translate(-50%, -50%)
+
+    .icon-fill
+      transition: filter .25s ease-in

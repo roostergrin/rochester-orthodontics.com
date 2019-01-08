@@ -1,7 +1,11 @@
 .custom-invisalign-tiles
+  @include tablet
+    padding: 0
   padding: 10rem 0
 
   &__row
+    @include tablet
+      padding-top: 20rem
     position: relative
     background: $light-grey-blue
 
@@ -9,6 +13,12 @@
       background: $faded-blue
 
   &__image-box
+    @include tablet
+      top: calc(#{$gutter} / 2 + 4rem)
+      left: 50%
+      transform: translateX(-50%)
+      width: calc(100% - #{$gutter})
+      height: 20rem
     position: absolute
     top: 0
     left: 0
@@ -16,10 +26,14 @@
     height: 100%
 
     &--alt
+      @include tablet
+        transform: translateX(-50%)
       left: 50%
 
   &__title
     @extend h1
+    @include tablet
+      padding-top: 6rem
     padding-top: 4rem
     padding-bottom: 2rem
     color: $white

@@ -1,8 +1,12 @@
 .block-gradient
+  @include tablet
+    padding: 4rem 0
   position: relative
   padding: 6rem 0 10rem
 
   &__overlay
+    @include tablet
+      display: none
     position: absolute
     top: 0
     left: 0
@@ -12,6 +16,10 @@
     height: 100%
 
   &__background
+    @include tablet
+      position: static
+      margin: auto
+      width: calc(100% - #{$gutter})
     position: absolute
     top: 0
     right: 0
@@ -19,14 +27,25 @@
     width: 70%
     height: 100%
 
+  &__background-image
+    @include tablet
+      min-height: 15rem
+
   &__title
     @extend h1
+    @include tablet
+      padding-top: 2rem
 
   &__body
+    @include tablet
+      padding-top: 2rem
+      padding-bottom: 0
     padding: 3rem 0 3.25rem
 
   &__buttons
     @extend .flex-start-center
+    @include tablet
+      padding-top: 2rem
     flex-direction: column
 
   &__button

@@ -5,6 +5,7 @@ import BlockSection from 'components/block/block-section/block-section'
 import BlockTiles from 'components/block/block-tiles/block-tiles'
 import CustomHomeTestimonials from 'components/custom/custom-home-testimonials/custom-home-testimonials'
 import CustomHomeWelcome from 'components/custom/custom-home-welcome/custom-home-welcome'
+import Hero from 'components/hero/hero'
 
 export default {
   name: 'Home',
@@ -20,7 +21,8 @@ export default {
     BlockSection,
     BlockTiles,
     CustomHomeTestimonials,
-    CustomHomeWelcome
+    CustomHomeWelcome,
+    Hero
   }
 }
 </script>

@@ -1,6 +1,10 @@
 .block-full-width
   @include tablet
     padding-top: 0
+
+  @include phone
+    padding: 4rem 0
+
   position: relative
   background: $faded-blue
   padding: 6rem 0
@@ -9,6 +13,12 @@
     @include tablet
       position: static
       width: 100%
+
+    @include phone
+      position: static
+      margin: auto
+      width: calc(100% - #{$gutter})
+
     position: absolute
     top: 0
     left: 0
@@ -24,9 +34,15 @@
     @extend h1
     @include tablet
       padding-top: 4rem
+
+    @include phone
+      padding-top: 2rem
     color: $white
 
   &__body
+    @include phone
+      padding-bottom: 0
+      
     padding: 2rem 0
     color: $white
 

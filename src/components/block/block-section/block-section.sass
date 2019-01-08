@@ -1,8 +1,10 @@
 .block-section
+  @include tablet
+    padding: 4rem 0
   padding: 6rem 0
 
   &__image
-    min-height: 15rem
+    min-height: 20rem
 
   &__content
     padding: 2rem 0
@@ -11,6 +13,8 @@
     @extend h1
 
   &__body
+    @include tablet
+      padding-bottom: 0
     padding: 2rem 0
 
   &__button

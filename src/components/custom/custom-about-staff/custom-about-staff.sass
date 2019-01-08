@@ -1,10 +1,14 @@
 .custom-about-staff
+  @include tablet
+    padding: 4rem 0 0
   padding: 6rem 0
 
   &__tile-container
     overflow: hidden
 
   &__tile
+    @include tablet
+      max-width: 100%
     position: relative
     margin-bottom: 8rem
     width: 100%

@@ -1,4 +1,6 @@
 .pages-about(v-if='!loading && props')
+  Hero(:content='props.hero')
   CustomAboutDoctor(:content='props.doctor')
   BlockFullWidth(:content='props.f_width')
   CustomAboutStaff(:content='props.staff')
+  CustomAboutApart(:content='props.apart')
