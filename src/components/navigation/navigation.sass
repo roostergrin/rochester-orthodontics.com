@@ -1,4 +1,4 @@
-.navigation-desktop
+.navigation
   @extend .flex-center-between
   position: fixed
   top: 0
@@ -12,11 +12,16 @@
   &--scrolled
     background: $light-grey-blue
 
+  &--open
+    background: $white
+
   &__logo-icon
     @include svg-size(13rem, 6rem)
+    @include tablet
+      @include svg-size(8rem, 4rem)
     transition: fill .25s ease-in
 
-    .navigation-desktop--scrolled &
+    .navigation--scrolled &
       .logo-0
         fill: $white-30
         stroke: $white-30
@@ -26,7 +31,19 @@
       .logo-text
         fill: $white
 
+    .navigation--open &
+      .logo-0
+        fill: $brownish-orange
+        stroke: $brownish-orange
+      .logo-1
+        fill: $brownish-orange
+        stroke: $brownish-orange
+      .logo-text
+        fill: $black
+
   &__content
+    @include tablet
+      display: none
     display: flex
     flex-direction: column
 
@@ -34,7 +51,7 @@
     @extend .flex-center-end
     padding-bottom: 1rem
 
-    .navigation-desktop--scrolled &
+    .navigation--scrolled &
       padding-bottom: 1.5rem
 
   &__content-bottom
@@ -50,7 +67,7 @@
     color: $white
     font-size: 24px
 
-    .navigation-desktop--scrolled &
+    .navigation--scrolled &
       font-size: 20px
 
     &:after
@@ -75,7 +92,7 @@
     color: $white
     font-size: 24px
 
-    .navigation-desktop--scrolled &
+    .navigation--scrolled &
       transform: translateX(-13rem)
       font-size: 20px
 
@@ -83,7 +100,7 @@
     @include svg-size(1.5rem, 1.5rem)
     margin-right: .5rem
 
-    .navigation-desktop--scrolled &
+    .navigation--scrolled &
       @include svg-size(1.25rem, 1.25rem)
       .phone-1
         fill: $marine
@@ -99,5 +116,54 @@
     padding: .5rem 1rem
     color: $white
 
-    .navigation-desktop--scrolled &
+    .navigation--scrolled &
+      opacity: 1
+
+    //-----------------------
+    //---- Mobile/Tablet
+    //-----------------------
+
+  &__hamburger
+    @include tablet
+      display: block
+    @include hamburger-basic($white, .5s, 2rem, 2rem)
+    display: none
+
+    .navigation--open &
+
+      @include hamburger-basic($black, .5s, 2rem, 2rem)
+
+  &__drawer
+    @extend .flex-start
+    @include tablet
+      width: 50%
+    @include phone
+      width: 75%
+    position: fixed
+    top: 5.5rem
+    right: 0
+    flex-direction: column
+    transition: opacity .25s ease-in
+    opacity: 0
+    background: $white
+    padding: 2rem
+    height: calc(100vh - 5rem)
+    pointer-events: none
+
+    &--active
+      opacity: 1
+      pointer-events: all
+
+  &__mobile-link
+    @extend h3
+    transform: translateX(5rem)
+    transition: .25s transform ease-in, .25s opacity ease-in
+    opacity: 0
+    padding-bottom: 1rem
+    color: $black
+    &.router-link-exact-active
+      color: $brownish-orange
+
+    &--active
+      transform: none
       opacity: 1

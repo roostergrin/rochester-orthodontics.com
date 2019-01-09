@@ -8,7 +8,7 @@
       
       .custom-about-apart__slide-container(ref='slider')
         .custom-about-apart__slide-track(:style='{ width: slideWidth * slides + "px", transform: "translateX(" + showing * slideWidth * -1 + "px)" }')
-          .custom-about-apart__slide(:class="{ active: current === j }", v-for='(thumbnail, j) in content.slider', :key='j' @click='slideList(j)', :style='{ width: slideWidth + "px" }')
+          .custom-about-apart__slide(:class="{ active: current === j }", v-for='(thumbnail, j) in content.slider', :key='j' @click='switchSlide(j)', :style='{ width: slideWidth + "px" }')
             img.custom-about-apart__slide-thumb(:src='thumbnail.image.sizes.medium', :alt='thumbnail.image.alt')
             
       .custom-about-apart__slider-button(@click='switchSlide')

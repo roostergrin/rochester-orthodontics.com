@@ -17,7 +17,7 @@ export default {
         }, 500)
         setTimeout(() => {
           this.loaded = true
-        }, 1250)
+        }, 1750)
         clearInterval(isLoading)
       }
     }, 100)

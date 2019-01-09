@@ -2,7 +2,7 @@
 
 <script>
 import Hero from 'components/hero/hero'
-import NavigationDesktop from 'components/navigation/navigation-desktop/navigation-desktop'
+import Navigation from 'components/navigation/navigation'
 import Footer from 'components/footer/footer'
 
 export default {
@@ -18,7 +18,7 @@ export default {
   components: {
     Footer,
     Hero,
-    NavigationDesktop
+    Navigation
   }
 }
 </script>

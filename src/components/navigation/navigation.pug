@@ -1,0 +1,20 @@
+.navigation(v-if='content', :class="{ 'navigation--scrolled': $store.state.nav, 'navigation--open': active }")
+  router-link.navigation__logo(:to='content.logo.href')
+    Icon.navigation__logo-icon(:name='content.logo.icon')
+      
+  .navigation__content
+    .navigation__content-top
+      router-link.navigation__link(v-for='(link, i) in links', :key='i', :to='link.path', v-if='link.navigation' v-html='link.name', :title='link.name')
+    .navigation__content-bottom
+      a.navigation__phone(:href='content.phone.href')
+        Icon.navigation__phone-icon(:name='content.phone.icon')
+        span(v-html='content.phone.label')
+      .navigation__appointment
+        span(v-html='content.appointment.label')
+  
+  .navigation__hamburger(@click='toggleNav', :class="{ 'navigation__hamburger--active': active }")
+    span
+    span
+    span
+  .navigation__drawer(@click='toggleNav', :class="{ 'navigation__drawer--active': active }")
+    router-link.navigation__mobile-link(v-for='(link, i) in links', :key='i', :class="{ 'navigation__mobile-link--active': active }", :style="{ transitionDelay: .05 * i + .2 + 's' }", :to='link.path', v-if='link.navigation' v-html='link.name', :title='link.name')

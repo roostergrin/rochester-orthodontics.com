@@ -6,9 +6,15 @@
 
   &__trigger
     position: absolute
-    top: -25rem
+    top: -15rem
     bottom: 0
     width: 100%
+
+    &--backup
+      position: absolute
+      top: 1px
+      bottom: 0
+      width: 100%
 
   img
     position: absolute
@@ -60,3 +66,33 @@
         &.tall-container
           max-width: 100%
           max-height: none
+
+      &.left,
+      &.right
+        &.top,
+        &.bottom
+          transform: none
+
+      &.top,
+      &.bottom
+        &.left,
+        &.right
+          transform: none
+
+      &.top
+        top: 0
+        transform: translateX(-50%)
+
+      &.bottom
+        top: initial
+        bottom: 0
+        transform: translateX(-50%)
+
+      &.right
+        right: 0
+        left: initial
+        transform: translateY(-50%)
+
+      &.left
+        left: 0
+        transform: translateY(-50%)

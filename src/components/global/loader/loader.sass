@@ -10,16 +10,37 @@
   &__right
     position: absolute
     top: 0
-    transition: transform .75s ease-in
+    transition: transform .75s ease-in, opacity .75s ease-in
+    opacity: 1
     background: $white
     width: 50%
     height: 100%
+    transition-delay: .5s
 
   &__left
-    &.animate
+    &--animate
       transform: translateX(-100%)
 
   &__right
-    &.animate
+    &--animate
       transform: translateX(100%)
     left: 50%
+
+  &__icon
+    @include svg-size(10rem, 6rem)
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    transition: opacity .5s ease-in
+    animation: 1.5s infinite spin
+    z-index: 9
+    @keyframes spin
+      0%
+        transform: translate(-50%, -50%) rotate(0deg)
+      100%
+        transform: translate(-50%, -50%) rotate(360deg)
+
+    &--animate
+      animation: 1.5s spin
+      opacity: 0

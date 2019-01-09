@@ -21,6 +21,12 @@ export default {
     imageFit: {
       type: String,
       default: 'cover'
+    },
+    position: {
+      type: Array,
+      default () {
+        return []
+      }
     }
   },
   data () {
@@ -47,7 +53,10 @@ export default {
   },
   methods: {
     onWaypoint ({ going, direction }) {
-      if (going === this.$waypointMap.GOING_IN) {
+      if (going === 'in') {
+        this.loaded = true
+      }
+      if (going === 'out') {
         this.loaded = true
       }
     },
@@ -60,3 +69,4 @@ export default {
   }
 }
 </script>
+<style scoped lang='sass' src='./lazy-image.sass'></style>
