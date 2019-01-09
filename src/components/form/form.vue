@@ -1,4 +1,4 @@
-<template lang='pug' src='./form.pug'></template>
+<template lang="pug" src="./form.pug"></template>
 
 <script>
 import api from 'api'
@@ -6,10 +6,10 @@ import axios from 'axios'
 export default {
   data: () => {
     return {
-      firstName: '',
-      lastName: '',
+      fullName: '',
       clientPhone: '',
       clientEmail: '',
+      message: '',
       postUrl: api + '/rg-mail/v1/contact',
       formSubmitted: false,
       formSuccess: false
@@ -24,30 +24,29 @@ export default {
           }
         })
         .catch((e) => {
-          console.log(e)
+          console.log(e, 'validate')
         })
     },
     onSubmit () {
       this.formSubmitted = true
       axios.post(this.postUrl, {
-        firstName: this.firstName,
-        lastName: this.lastName,
+        fullName: this.fullName,
         clientPhone: this.clientPhone,
         clientEmail: this.clientEmail
       })
         .then(res => {
           this.formSuccess = true
-          console.log('success')
           setTimeout(() => {
             this.formSubmitted = false
-            console.log('reset')
-          }, 500)
-          this.firstName = ''
-          this.lastName = ''
+          }, 1500)
+          this.fullName = ''
           this.clientPhone = ''
           this.clientEmail = ''
+          this.message = ''
         })
-        .catch(e => { console.log(e) })
+        .catch(e => {
+          console.log(e, 'submitted')
+        })
     }
   }
 }

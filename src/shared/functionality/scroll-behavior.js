@@ -1,18 +1,11 @@
-const scrollBehavior = (to, from, savedPosition) => {
-  if (savedPosition) {
-    return { x: 0, y: 0 }
+import VueScrollTo from 'vue-scrollto'
+
+const scrollBehavior = function (to, from) {
+  if (to.hash) {
+    window.scrollTo(0, 0)
+    VueScrollTo.scrollTo(to.hash, { offset: -150, easing: 'ease-in', duration: 1500 })
   } else {
-    if (to.hash) {
-      return {
-        selector: to.hash,
-        offset: { x: 0, y: 200 }
-      }
-    } else {
-      return {
-        x: 0,
-        y: 0
-      }
-    }
+    return { x: 0, y: 0 }
   }
 }
 

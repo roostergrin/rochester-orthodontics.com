@@ -2,7 +2,7 @@
   NavTrigger.hero__trigger-1(:props='false')
   NavTrigger.hero__trigger-2(:props='false')
   NavTrigger.hero__trigger-3(:props='true')
-  video.hero__video(muted loop autoplay v-if='content.video')
+  video.hero__video(muted loop playsinline autoplay v-if='content.video')
     source(:src="content.video" type="video/mp4")
   
   .hero__background(:style="{ backgroundImage: 'url(' + content.image + ')' }" v-if='content.image')

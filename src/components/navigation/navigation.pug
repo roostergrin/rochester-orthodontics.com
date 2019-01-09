@@ -9,7 +9,7 @@
       a.navigation__phone(:href='content.phone.href')
         Icon.navigation__phone-icon(:name='content.phone.icon')
         span(v-html='content.phone.label')
-      .navigation__appointment
+      router-link.navigation__appointment(:to='content.appointment.href')
         span(v-html='content.appointment.label')
   
   .navigation__hamburger(@click='toggleNav', :class="{ 'navigation__hamburger--active': active }")
