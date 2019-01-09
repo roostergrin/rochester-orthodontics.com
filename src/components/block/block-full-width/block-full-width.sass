@@ -42,9 +42,11 @@
   &__body
     @include phone
       padding-bottom: 0
-      
+
     padding: 2rem 0
     color: $white
 
   &__button
     @include basic-button($white, $white, $faded-blue)
+    @include phone
+      margin-top: 2rem

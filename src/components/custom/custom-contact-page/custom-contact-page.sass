@@ -1,12 +1,25 @@
 .custom-contact-page
   &__content
     @extend .flex-stretch-center
+    @include tablet
+      flex-wrap: wrap
 
   &__banner,
   &__info
+    @include tablet
+      width: 50%
     width: calc(100% / 14 * 4)
 
+  &__banner
+    @include tablet
+      width: 0
+
   &__form
+    @include tablet
+      width: 50%
+    @include phone-lg
+      padding: 2rem $gutter
+      width: 100%
     padding: 4rem 2rem
     width: calc(100% / 14 * 6)
 
@@ -24,6 +37,9 @@
       font-weight: 700
 
   &__info
+    @include phone-lg
+      padding: 2rem $gutter
+      width: 100%
     background: $faded-blue
     padding: 6rem 2rem 9rem
     color: $white

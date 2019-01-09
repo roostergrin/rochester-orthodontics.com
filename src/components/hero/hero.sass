@@ -45,6 +45,12 @@
     min-width: 100%
     min-height: 100%
 
+    @media screen and (max-width: 490px) and (max-height: 350px)
+      max-height: 100%
+
+    @media screen and (max-height: 450px) and (min-width: 500px)
+      max-width: 100%
+
   &__icon
     @include svg-size(2.5rem, 2.5rem)
     position: absolute
