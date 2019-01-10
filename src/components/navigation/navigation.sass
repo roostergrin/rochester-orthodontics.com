@@ -138,9 +138,11 @@
   &__drawer
     @extend .flex-start
     @include tablet
+      display: block
       width: 50%
     @include phone
       width: 75%
+    display: none
     position: fixed
     top: 5.5rem
     right: 0
