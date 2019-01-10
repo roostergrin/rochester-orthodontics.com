@@ -6,16 +6,16 @@
       .block-section__content
         .block-section__title(v-html='content.title')
         .block-section__body(v-html='content.body')
-        router-link.block-section__button(:to='content.button.href' v-html='content.button.label' v-if='content.button.href')
-        .block-section__button(:to='content.button.href' v-html='content.button.label' v-if='!content.button.href' @click='toggleModal')
+        router-link.block-section__button(:to='content.button.href' v-html='content.button.label' v-if='content.button.href && content.button.label')
+        .block-section__button(:to='content.button.href' v-html='content.button.label' v-if='!content.button.href && content.button.label' @click='toggleModal')
           
   Container(v-if='alt')
     Column(:cols='6')
       .block-section__content
         .block-section__title(v-html='content.title')
         .block-section__body(v-html='content.body')
-        router-link.block-section__button(:to='content.button.href' v-html='content.button.label' v-if='content.button.href')
-        .block-section__button(:to='content.button.href' v-html='content.button.label' v-if='!content.button.href' @click='toggleModal')
+        router-link.block-section__button(:to='content.button.href' v-html='content.button.label' v-if='content.button.href && content.button.label')
+        .block-section__button(:to='content.button.href' v-html='content.button.label' v-if='!content.button.href && content.button.label' @click='toggleModal')
     Column(:cols='6')
       LazyImage.block-section__image(:src='content.image')
   

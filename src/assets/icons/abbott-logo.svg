@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) -->
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 310 144.8" style="enable-background:new 0 0 310 144.8;" xml:space="preserve">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 310 144.8" xml:space="preserve">
 	<style type="text/css">
 		.logo-0 {
 			fill: #D19313;
@@ -19,7 +19,7 @@
 		}
 	</style>
 	<title>abbott-logo</title>
-	<g>
+	<g class='logo-wave'>
 		<path class="logo-0" d="M68.9,88.1v14.5h8.7v-3c0-21-4-64.2,49.7-96.6C91.9,20.1,68.5,42.3,68.9,88.1z"/>
 		<path class="logo-0" d="M79.4,88.1v14.5h8.1c0.2,0,0.4,0,0.5,0v-3.1c0-21-2.6-65,53.9-98.8C105.2,17.1,79,42.3,79.4,88.1z"/>
 		<path class="logo-0" d="M89.9,88.1v14.5c2.9,0,5.8,0,8.6,0c0,0,0,0,0,0v-3.1c0-21-4.2-64,55.9-99.1C117.7,17.9,89.5,42.2,89.9,88.1z"/>

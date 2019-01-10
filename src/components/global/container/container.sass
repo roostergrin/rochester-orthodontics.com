@@ -28,6 +28,9 @@
   @media screen and (max-width: $max-width)
     padding: 0 calc(#{$gutter} / 2)
 
+  @media screen and (max-width: $screen-md)
+    padding: 0 calc(#{$gutter} / 2)
+
   @supports (display: flex)
     display: flex
     flex-wrap: wrap
@@ -64,6 +67,9 @@
       content: ''
 
     @media screen and (max-width: $max-width)
+      padding: 0 calc(#{$gutter} / 2)
+
+    @media screen and (max-width: $screen-md)
       padding: 0 calc(#{$gutter} / 2)
 
     @supports (display: flex)
