@@ -7,7 +7,7 @@
     Column(:cols='8', :off='2')
       .custom-home-testimonials__content-box
         transition-group.custom-home-testimonials__image-box(name='fade', tag='div')
-          .custom-home-testimonials__image(v-for='(slide, i) in content.testimonials', :key='"" + i')
+          .custom-home-testimonials__image(v-for='(slide, i) in content.testimonials', :key='"" + i' v-if='active === i')
             LazyImage(:src='slide.image')
               
         .custom-home-testimonials__text-box

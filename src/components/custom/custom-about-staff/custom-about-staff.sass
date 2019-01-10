@@ -24,6 +24,9 @@
         &:after
           color: $white
 
+      .custom-about-staff__image
+        filter: brightness(.5)
+
       .custom-about-staff__position
         padding-bottom: 2rem
         color: $white
@@ -34,9 +37,11 @@
     position: absolute
     top: 0
     left: 0
+    transition: filter .5s ease-in
     z-index: -1
     width: 100%
     height: 100%
+    filter: none
 
   &__text-box
     position: absolute
