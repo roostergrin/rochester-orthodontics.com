@@ -4,7 +4,7 @@
 
     .custom-about-apart__slider
       .custom-about-apart__image(v-for='(tile, i) in content.slider', :key="'slide-' + i", :class="{ 'custom-about-apart__image--active': current === i }")
-        LazyImage(:src='tile.image')
+        LazyImage(:src='tile.image', :position="[ 'top' ]")
       
       .custom-about-apart__slide-container(ref='slider')
         .custom-about-apart__slide-track(:style='{ width: slideWidth * slides + "px", transform: "translateX(" + showing * slideWidth * -1 + "px)" }')
