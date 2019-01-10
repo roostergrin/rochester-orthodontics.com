@@ -24,9 +24,8 @@
       .block-section__modal-background(@click='toggleModal')
       .block-section__modal-close(@click='toggleModal') Close
       .block-section__slider
-        transition-group(name='fade' tag='div')
-          .block-section__slider-image(v-for='(tile, i) in content.modal', :key="'slide-' + i", v-if='current === i')
-            LazyImage(:src='tile.image', :position="[ 'top' ]")
+        .block-section__slider-image(v-for='(tile, i) in content.modal', :key="'slide-' + i", :class="{ 'block-section__slider-image--active': current === i }")
+          LazyImage(:src='tile.image', :position="[ 'top' ]")
         
         .block-section__slide-container(ref='slider')
           .block-section__slide-track(:style='{ width: slideWidth * slides + "px", transform: "translateX(" + showing * slideWidth * -1 + "px)" }')
