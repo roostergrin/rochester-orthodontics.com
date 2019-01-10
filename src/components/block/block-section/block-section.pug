@@ -1,4 +1,4 @@
-.block-section
+.block-section(v-if='content')
   Container(v-if='!alt')
     Column(:cols='6')
       LazyImage.block-section__image(:src='content.image')
@@ -6,15 +6,33 @@
       .block-section__content
         .block-section__title(v-html='content.title')
         .block-section__body(v-html='content.body')
-        router-link.block-section__button(:to='content.button.href' v-html='content.button.label' v-if='content.button.label')
+        router-link.block-section__button(:to='content.button.href' v-html='content.button.label' v-if='content.button.href')
+        .block-section__button(:to='content.button.href' v-html='content.button.label' v-if='!content.button.href' @click='toggleModal')
           
   Container(v-if='alt')
     Column(:cols='6')
       .block-section__content
         .block-section__title(v-html='content.title')
         .block-section__body(v-html='content.body')
-        router-link.block-section__button(:to='content.button.href' v-html='content.button.label' v-if='content.button.label')
+        router-link.block-section__button(:to='content.button.href' v-html='content.button.label' v-if='content.button.href')
+        .block-section__button(:to='content.button.href' v-html='content.button.label' v-if='!content.button.href' @click='toggleModal')
     Column(:cols='6')
       LazyImage.block-section__image(:src='content.image')
   
+  transition(name='fade')
+    .block-section__modal(v-show='showModal')
+      .block-section__modal-background(@click='toggleModal')
+      .block-section__modal-close(@click='toggleModal') Close
+      .block-section__slider
+        transition-group(name='fade' tag='div')
+          .block-section__slider-image(v-for='(tile, i) in content.modal', :key="'slide-' + i", v-if='current === i')
+            LazyImage(:src='tile.image', :position="[ 'top' ]")
+        
+        .block-section__slide-container(ref='slider')
+          .block-section__slide-track(:style='{ width: slideWidth * slides + "px", transform: "translateX(" + showing * slideWidth * -1 + "px)" }')
+            .block-section__slide(:class="{ active: current === j }", v-for='(thumbnail, j) in content.modal', :key='j' @click='switchSlide(j)', :style='{ width: slideWidth + "px" }')
+              img.block-section__slide-thumb(:src='thumbnail.image.sizes.medium', :alt='thumbnail.image.alt')
+              
+        .block-section__slider-button(@click='switchSlide')
+          Icon.block-section__slider-icon(name='arrow')
   
