@@ -1,10 +1,19 @@
 .footer
   @extend .flex-center
+  flex-direction: column
   background: $marine
-  padding: 3rem 0
+  padding: 3rem 0 1rem
 
   &__logo
     @include svg-size(12rem, 6rem)
 
-  .logo-text
-    fill: $white
+    .logo-text
+      fill: $white
+
+  &__copyright
+    padding-top: 2rem
+    width: 100%
+    text-align: center
+    color: $white-30
+    font-size: 12px
+    font-weight: 300

@@ -2,6 +2,16 @@
 
 <script>
 export default {
-  props: ['content']
+  props: ['content'],
+  data () {
+    return {
+      active: null
+    }
+  },
+  methods: {
+    setActive (i) {
+      this.active === i ? this.active = null : this.active = i
+    }
+  }
 }
 </script>
