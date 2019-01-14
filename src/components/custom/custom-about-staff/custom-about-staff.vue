@@ -5,12 +5,13 @@ export default {
   props: ['content'],
   data () {
     return {
+      activeBio: null,
       active: null
     }
   },
   methods: {
     setActive (i) {
-      this.active === i ? this.active = null : this.active = i
+      this.activeBio === i ? this.activeBio = null : this.activeBio = i
     }
   }
 }

@@ -2,6 +2,11 @@
   position: relative
   padding: 6rem 0
 
+  &__trigger
+    @include tablet
+      top: 5%
+    top: 30%
+
   &__overlay
     position: absolute
     top: 0
@@ -17,6 +22,7 @@
       @include svg-size(25rem, 5rem)
     @include phone
       @include svg-size(16rem, 3rem)
+    @include fade(.25s)
     position: absolute
     top: 2rem
     left: 50%
@@ -40,6 +46,7 @@
       position: relative
       width: 100%
       min-height: 25rem
+    @include fade(.25s)
     position: absolute
     top: 0
     left: 0
@@ -96,6 +103,7 @@
       bottom: 0
       width: 100%
       min-height: 15rem
+    @include fade(.25s)
     position: absolute
     top: 4rem
     right: 0

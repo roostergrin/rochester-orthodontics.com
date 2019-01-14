@@ -1,13 +1,29 @@
 .block-section
   @include tablet
     padding: 4rem 0
+  position: relative
   padding: 6rem 0
 
+  &__trigger
+    @include tablet
+      top: 15%
+    top: 35%
+
   &__image
+    @include fade(.25s)
     min-height: 20rem
+    transition-delay: 0s
+
+    &--alt
+      transition-delay: .2s
 
   &__content
+    @include fade(.25s)
     padding: 2rem 0
+    transition-delay: .2s
+
+    &--alt
+      transition-delay: 0s
 
   &__title
     @extend h1

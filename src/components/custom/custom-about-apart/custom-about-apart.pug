@@ -1,8 +1,9 @@
 .custom-about-apart
+  Trigger.custom-about-staff__trigger(:props='1' v-if="!active")
   .custom-about-apart__container
     
 
-    .custom-about-apart__slider
+    .custom-about-apart__slider(:class="{ active: active }")
       .custom-about-apart__image(v-for='(tile, i) in content.slider', :key="'slide-' + i", :class="{ 'custom-about-apart__image--active': current === i }")
         LazyImage(:src='tile.image', :position="[ 'top' ]")
       
@@ -16,5 +17,6 @@
           
     Container
       Column(:cols='5', :off='7')
-        .custom-about-apart__title(v-html='content.title')
-        .custom-about-apart__body(v-html='content.body')
+        .custom-about-apart__content-box(:class="{ active: active }")
+          .custom-about-apart__title(v-html='content.title')
+          .custom-about-apart__body(v-html='content.body')

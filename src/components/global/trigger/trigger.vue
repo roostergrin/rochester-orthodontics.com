@@ -17,7 +17,8 @@ export default {
   mixins: [toggleActive],
   methods: {
     onWaypoint ({ going, direction }) {
-      if (going === this.$waypointMap.GOING_IN) {
+      if (going === 'in') {
+        console.log(going, direction)
         this.toggleActive(this.props)
       }
     }

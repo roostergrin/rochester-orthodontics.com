@@ -5,6 +5,7 @@ export default {
   props: ['content'],
   data () {
     return {
+      active: null,
       current: 0,
       showing: 0,
       shifting: false,

@@ -1,4 +1,10 @@
 .custom-about-apart
+  position: relative
+
+  &__trigger
+    @include tablet
+      top: 5%
+    top: 25%
 
   &__container
     @include tablet
@@ -6,6 +12,10 @@
     position: relative
     padding: 6rem 0 8rem
     max-width: 2056px
+
+  &__content-box
+    @include fade(.25s)
+    transition-delay: .2s
 
   &__title
     @extend h1
@@ -24,7 +34,7 @@
       margin: auto
       width: calc(100% - #{$gutter})
       min-height: 20rem
-
+    @include fade(.25s)
     position: absolute
     top: 0
     left: 0

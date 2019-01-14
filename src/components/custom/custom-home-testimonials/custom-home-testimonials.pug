@@ -1,16 +1,17 @@
 .custom-home-testimonials
+  Trigger.custom-home-testimonials__trigger(:props='1' v-if="!active")
   .custom-home-testimonials__background-image
     LazyImage(:src='content.background')
   .custom-home-testimonials__overlay
-  Icon.custom-home-testimonials__icon(:name='content.icon')
+  Icon.custom-home-testimonials__icon(:name='content.icon', :class="{ active: active }")
   Container
     Column(:cols='8', :off='2')
       .custom-home-testimonials__content-box
-        transition-group.custom-home-testimonials__image-box(name='fade', tag='div')
+        transition-group.custom-home-testimonials__image-box(name='fade', tag='div', :class="{ active: active }")
           .custom-home-testimonials__image(v-for='(slide, i) in content.testimonials', :key='"" + i' v-if='active === i')
             LazyImage(:src='slide.image')
               
-        .custom-home-testimonials__text-box
+        .custom-home-testimonials__text-box(:class="{ active: active }")
           transition-group.custom-home-testimonials__text-content(name='fade', tag='div')
             .custom-home-testimonials__text(v-for='(tile, i) in content.testimonials', :key='"" + i' v-show='active === i')
               .custom-home-testimonials__text-body(v-html=" '\"' + tile.body + '\"'")

@@ -1,5 +1,6 @@
 .block-tiles
-  .block-tiles__tile(v-for='(tile, i) in content', :key='i', :class="{ 'block-tiles__tile--alt': tile.image }")
+  Trigger.block-tiles__trigger(:props='1' v-if="!active")
+  .block-tiles__tile(v-for='(tile, i) in content', :key='i', :class="{ 'block-tiles__tile--alt': tile.image, active: active }", :style="{ transitionDelay: .2 * i + 's' }")
     .block-tiles__tile-overlay(v-if='tile.image')
     LazyImage.block-tiles__tile-image(:src='tile.image' v-if='tile.image')
     .block-tiles__tile-title(v-html='tile.title')

@@ -1,15 +1,16 @@
 .custom-home-welcome
-  Icon.custom-home-welcome__icon(:name='content.icon')
+  Trigger.custom-home-welcome__trigger(:props='1' v-if="!active")
+  Icon.custom-home-welcome__icon(:name='content.icon', :class="{ active: active }")
   Container
     Column(:cols='4', :off='1')
-      LazyImage.custom-home-welcome__image(:src='content.image')
+      LazyImage.custom-home-welcome__image(:src='content.image', :class="{ active: active }")
     Column(:cols='6')
-      .custom-home-welcome__content-box
+      .custom-home-welcome__content-box(:class="{ active: active }")
         .custom-home-welcome__title(v-html='content.title')
         .custom-home-welcome__subtitle(v-html='content.subtitle')
         .custom-home-welcome__body(v-html='content.body')
         .custom-home-welcome__tiles
-          .custom-home-welcome__tile(v-for="(tile, i) in content.tiles", :key='i')
+          .custom-home-welcome__tile(v-for="(tile, i) in content.tiles", :key='i', :class="{ active: active }", :style="{ transitionDelay: .2 * i + .75 + 's' }")
             Icon.custom-home-welcome__tile-icon(:name='tile.icon')
             .custom-home-welcome__tile-title(v-html='tile.title')
             .custom-home-welcome__tile-body(v-html='tile.body')

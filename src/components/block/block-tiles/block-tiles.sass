@@ -3,8 +3,15 @@
   @include tablet
     flex-wrap: wrap
     justify-content: center
+  position: relative
+
+  &__trigger
+    @include tablet
+      top: 5%
+    top: 15%
 
   &__tile
+    @include fade(.35s)
     @include tablet
       padding-right: 15px
       padding-left: 15px

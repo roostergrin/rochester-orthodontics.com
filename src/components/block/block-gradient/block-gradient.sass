@@ -4,6 +4,11 @@
   position: relative
   padding: 6rem 0 10rem
 
+  &__trigger
+    @include tablet
+      top: 0
+    top: 25%
+
   &__overlay
     @include tablet
       display: none
@@ -16,6 +21,7 @@
     height: 100%
 
   &__background
+    @include fade(.25s)
     @include tablet
       position: static
       margin: auto
@@ -26,10 +32,14 @@
     z-index: -2
     width: 70%
     height: 100%
+    transition-delay: .2s
 
   &__background-image
     @include tablet
       min-height: 15rem
+
+  &__content-box
+    @include fade(.25s)
 
   &__title
     @extend h1

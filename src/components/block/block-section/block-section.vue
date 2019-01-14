@@ -18,6 +18,7 @@ export default {
   },
   data () {
     return {
+      active: false,
       showModal: false,
       current: 0,
       showing: 0,

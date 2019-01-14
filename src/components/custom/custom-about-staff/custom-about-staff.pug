@@ -1,7 +1,8 @@
 .custom-about-staff
+  Trigger.custom-about-staff__trigger(:props='1' v-if="!active")
   Container
-    Column.custom-about-staff__tile-container(:cols='4' v-for='(tile, i) in content', :key='i')
-      .custom-about-staff__tile(:class="{ 'custom-about-staff__tile--active': active === i }" @click='setActive(i)')
+    Column.custom-about-staff__tile-container(:cols='4' v-for='(tile, i) in content', :key='i', :class="{ active: active }", :style="{ transitionDelay: i * .2 + 's' }")
+      .custom-about-staff__tile(:class="{ 'custom-about-staff__tile--active': activeBio === i }" @click='setActive(i)')
         .custom-about-staff__image
           LazyImage(:src='tile.image')
         .custom-about-staff__text-box

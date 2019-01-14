@@ -1,12 +1,14 @@
 .block-gradient
+  Trigger.block-gradient__trigger(:props='1' v-if="!active")
   .block-gradient__overlay
-  .block-gradient__background
+  .block-gradient__background(:class="{ active: active }")
     LazyImage.block-gradient__background-image(:src='content.image')
   Container
     Column(:cols='6')
-      .block-gradient__title(v-html='content.title')
-      .block-gradient__body(v-html='content.body')
-      .block-gradient__buttons
-        a.block-gradient__button(v-for='(button, i) in content.buttons', :key='i', :href='button.href', target='_blank' v-html='button.label')
+      .block-gradient__content-box(:class="{ active: active }")
+        .block-gradient__title(v-html='content.title')
+        .block-gradient__body(v-html='content.body')
+        .block-gradient__buttons
+          a.block-gradient__button(v-for='(button, i) in content.buttons', :key='i', :href='button.href', target='_blank' v-html='button.label')
       
   

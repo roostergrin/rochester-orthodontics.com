@@ -2,6 +2,11 @@
 
 <script>
 export default {
-  props: ['content']
+  props: ['content'],
+  data () {
+    return {
+      active: false
+    }
+  }
 }
 </script>

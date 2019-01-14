@@ -1,8 +1,10 @@
 .block-full-width
+  Trigger.block-full-width__trigger(:props='1' v-if="!active")
   .block-full-width__image-box
-    LazyImage.block-full-width__image(:src='content.image')
+    LazyImage.block-full-width__image(:src='content.image', :class="{ active: active }")
   Container
     Column(:cols='5', :off='7')
-      .block-full-width__title(v-html='content.title')
-      .block-full-width__body(v-html='content.body')
-      router-link.block-full-width__button(:to='content.button.href' v-html='content.button.label' v-if='content.button.label')
+      .block-full-width__content-box(:class="{ active: active }")
+        .block-full-width__title(v-html='content.title')
+        .block-full-width__body(v-html='content.body')
+        router-link.block-full-width__button(:to='content.button.href' v-html='content.button.label' v-if='content.button.label')
