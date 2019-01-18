@@ -1,4 +1,5 @@
 .navigation(v-if='content', :class="{ 'navigation--scrolled': $store.state.nav, 'navigation--open': active }")
+  .navigation__background
   router-link.navigation__logo(:to='content.logo.href')
     Icon.navigation__logo-icon(:name='content.logo.icon')
       

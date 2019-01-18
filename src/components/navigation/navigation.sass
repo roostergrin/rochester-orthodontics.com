@@ -15,11 +15,22 @@
   &--open
     background: $white
 
+  &__background
+    position: absolute
+    top: 0
+    left: 0
+    z-index: -1
+    background: linear-gradient(to bottom, $shadow, transparent)
+    width: 100%
+    height: 100%
+
   &__logo-icon
     @include svg-size(13rem, 6rem)
     @include tablet
       @include svg-size(8rem, 4rem)
     transition: fill .25s ease-in
+    .logo-text
+      fill: $white
 
     .navigation--scrolled &
       .logo-wave
