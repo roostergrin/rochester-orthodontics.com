@@ -18,7 +18,6 @@ export default {
   methods: {
     onWaypoint ({ going, direction }) {
       if (going === 'in') {
-        console.log(going, direction)
         this.toggleActive(this.props)
       }
     }

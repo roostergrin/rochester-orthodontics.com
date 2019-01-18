@@ -5,12 +5,13 @@ export default {
   props: ['content'],
   data () {
     return {
-      active: 0
+      active: 0,
+      slideActive: 0
     }
   },
   methods: {
     changeSlide (i) {
-      this.active = i
+      this.slideActive = i
     }
   }
 }

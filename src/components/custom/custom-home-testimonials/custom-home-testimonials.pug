@@ -8,13 +8,13 @@
     Column(:cols='8', :off='2')
       .custom-home-testimonials__content-box
         transition-group.custom-home-testimonials__image-box(name='fade', tag='div', :class="{ active: active }")
-          .custom-home-testimonials__image(v-for='(slide, i) in content.testimonials', :key='"" + i' v-if='active === i')
+          .custom-home-testimonials__image(v-for='(slide, i) in content.testimonials', :key='"image-" + i' v-if='slideActive === i')
             LazyImage(:src='slide.image')
               
         .custom-home-testimonials__text-box(:class="{ active: active }")
           transition-group.custom-home-testimonials__text-content(name='fade', tag='div')
-            .custom-home-testimonials__text(v-for='(tile, i) in content.testimonials', :key='"" + i' v-show='active === i')
+            .custom-home-testimonials__text(v-for='(tile, j) in content.testimonials', :key='"text-" + j' v-show='slideActive === j')
               .custom-home-testimonials__text-body(v-html=" '\"' + tile.body + '\"'")
               .custom-home-testimonials__text-author(v-html='"- " + tile.author')
           .custom-home-testimonials__navigation
-            .custom-home-testimonials__navigation-button(v-for='(dot, i) in content.testimonials', :key='i', :class="{ active: active === i }" @click='changeSlide(i)')
+            .custom-home-testimonials__navigation-button(v-for='(dot, k) in content.testimonials', :key='k', :class="{ active: slideActive === k }" @click='changeSlide(k)')
