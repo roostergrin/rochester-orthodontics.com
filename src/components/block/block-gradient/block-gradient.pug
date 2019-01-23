@@ -9,6 +9,7 @@
         .block-gradient__title(v-html='content.title')
         .block-gradient__body(v-html='content.body')
         .block-gradient__buttons
-          a.block-gradient__button(v-for='(button, i) in content.buttons', :key='i', :href='button.href', target='_blank' v-html='button.label')
+          a.block-gradient__button(v-for='(button, i) in content.buttons', :key='i', :href='button.href', target='_blank' v-html='button.label' v-if='!button.router_link')
+          router-link.block-gradient__button(v-for='(button, i) in content.buttons', :key='i', :to='button.href' v-html='button.label' v-if='button.router_link')
       
   
