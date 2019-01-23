@@ -2,11 +2,11 @@
   .custom-contact-page__content
     .custom-contact-page__banner
       LazyImage(:src='content.banner')
-    .custom-contact-page__form
+    .custom-contact-page__form#form
       .custom-contact-page__form-content
         .custom-contact-page__form-title(v-html='content.form.title')
         .custom-contact-page__form-body(v-html='content.form.body')
-        MainForm#form
+        MainForm
         .custom-contact-page__form-emergency(v-html='content.emergency.body' @click='toggleModal')
     .custom-contact-page__info
       .custom-contact-page__info-content
