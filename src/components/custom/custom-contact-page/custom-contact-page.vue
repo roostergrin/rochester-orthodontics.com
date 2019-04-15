@@ -21,6 +21,7 @@ export default {
       }
     }
   },
+  // AIzaSyB0lRgxKGHS1Vh4CbxOwP8ps4WsB15R03o api key for the googs
   components: {
     MainForm
   }

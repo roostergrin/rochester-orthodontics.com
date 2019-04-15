@@ -13,9 +13,8 @@
         .custom-contact-page__info-title(v-html='content.hours.title')
         .custom-contact-page__info-hours(v-html='content.hours.body')
         a.custom-contact-page__info-button(v-for='(button, i) in content.hours.buttons', :key='"button-" + i', :href='button.href', v-html='button.label')
-  .custom-contact-page__map
-    .custom-contact-page__map-iframe(v-html='content.map')
-
+  #map.custom-contact-page__map
+    
   transition(name='fade')
     .custom-contact-page__modal(v-show='showModal')
       .custom-contact-page__modal-background(@click='toggleModal')
