@@ -1,4 +1,4 @@
-const route = 'https//www.rochester-orthodontics.com/wp-json'
+const route = 'https://www.rochester-orthodontics.com/wp-json'
 
 const api = () => {
   return route
