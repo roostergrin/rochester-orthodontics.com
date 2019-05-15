@@ -4,6 +4,7 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php wp_head(); ?>
+    <meta name=“google-site-verification” content=“RcXvXY-WaMuwK4zeIjPPyd8cRlh1pCp_4wmPkaCQXGo” />
 </head>
 <body>
   <div id='app' role='application'></div>
