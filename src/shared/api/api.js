@@ -1,5 +1,7 @@
 const route = 'https//www.rochester-orthodontics.com/wp-json'
 
-const api = () => 'https:' + route
+const api = () => {
+  return route
+}
 
 export default api()
