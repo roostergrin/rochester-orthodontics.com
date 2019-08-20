@@ -23,6 +23,13 @@
   &__image
     @include fade(.5s)
     min-height: 20rem
+    object-fit: scale-down
+
+  &__image-fit
+    @include fade(.5s)
+    min-height: 30rem
+    max-width: 70vw
+    object-fit: scale-down
 
   &__content-box
     @include fade(.25s)

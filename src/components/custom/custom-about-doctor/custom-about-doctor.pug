@@ -2,7 +2,7 @@
   Trigger.block-section__trigger(:props='1' v-if="!active")
   Container
     Column(:cols='4', :off='1')
-      LazyImage.custom-about-doctor__image(:src='content.image', :class="{ active: active }")
+      LazyImage.custom-about-doctor__image-fit(:src='content.image', :class="{ active: active }")
     Column(:cols='6')
       .custom-about-doctor__content-box(:class="{ active: active }")
         .custom-about-doctor__title(v-html='content.title')
