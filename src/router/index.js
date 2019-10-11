@@ -59,6 +59,14 @@ const router = new VueRouter({
       component: Styleguide
     },
     {
+      path: '/patient-portal',
+      beforeEnter () {
+        window.location = 'https://patient.sesamecommunications.com/rochesterortho/index.html'
+      },
+      name: 'Patient Portal',
+      navigation: true
+    },
+    {
       path: '/*',
       name: '404',
       navigation: false,
