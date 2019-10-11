@@ -61,7 +61,7 @@ const router = new VueRouter({
     {
       path: '/patient-portal',
       beforeEnter () {
-        window.location = 'https://patient.sesamecommunications.com/rochesterortho/index.html'
+        window.open('https://patient.sesamecommunications.com/rochesterortho/index.html', '_blank')
       },
       name: 'Patient Portal',
       navigation: true
