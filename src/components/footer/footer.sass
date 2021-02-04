@@ -3,6 +3,103 @@
   flex-direction: column
   background: #0b622f
   padding: 3rem 0 1rem
+  display: block
+  float: left
+  width: 100%
+  text-align: center
+  
+  .container
+    display: block
+	
+  .middell
+    display: inline-block
+    width: 33.333%
+
+  .footertext
+    float: left
+    width: 33.333%
+	
+  .footertext
+    iframe
+     width: 100%
+	 
+  .footertext
+    br
+	 width: 100%
+	 
+  .footerright
+    float: right
+    width: 33.333%
+
+  .footerright h2
+    width: 100%
+    color: #fff
+    text-transform: capitalize
+  
+  .allrights
+    color: #fff
+
+  .allrights a
+    display: block
+    color: #fff
+
+  .allrights ul
+    list-style: none
+    margin: 10px 0 15px
+    padding: 0
+
+  a.ester1
+    background: #fff
+    color: #000
+    display: inline-block
+    padding: 13px 15px 5px
+    border-radius: 4px
+    margin-top: 10px
+    font-weight: 600
+	
+  a.ester:hover
+    color: #1f9750  
+
+  a.ester1:hover
+      background: #1f9750
+
+  .popup
+    position: fixed
+    width: 100%
+    height: 100%
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+    background: rgba(0, 0, 0, 0.7)
+    z-index: 999999
+    display: none
+
+  .covidpopupes
+    transform: translate(-50%, -50%)
+    background: #fff
+    padding: 20px
+    position: absolute
+    top: 50%
+    left: 50%
+    text-align: left
+    font-size: 18px
+    border-radius: 5px
+
+  .closed
+    position: absolute
+    top: -16px
+    right: -14px
+    background: #0b622f
+    width: 30p
+    height: 30px
+    color: #fff
+    font-size: 20px
+    font-weight: bold
+    text-align: center
+    line-height: 27px
+    border-radius: 50px
+    cursor: pointer	
 
   &__logo
     @include svg-size(12rem, 6rem)
@@ -17,3 +114,15 @@
     color: $white-30
     font-size: 12px
     font-weight: 300
+	
+@media (max-width: 767px)
+   .footer .footertext
+      width: 100%
+      margin: 20px 0
+
+   .footer .footerright
+      width: 100%
+
+   .footer .middell
+      width: 100%
+         

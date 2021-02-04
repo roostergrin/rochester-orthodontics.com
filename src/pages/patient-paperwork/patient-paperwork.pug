@@ -1,0 +1,5 @@
+.pages-get(v-if='props && !loading')
+  Hero(:content='props.hero')
+  BlockSection(:content='props.section', :alt='true')
+  BlockFullWidth#financing(:content='props.f_width')
+  BlockGradient(:content='props.gradient')

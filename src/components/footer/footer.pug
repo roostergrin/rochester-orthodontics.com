@@ -1,3 +1,13 @@
 .footer
-  Icon.footer__logo(name='abbott-logo')
-  a.footer__copyright(href='https://www.roostergrin.com/') © 2018 Online Advantage by Rooster Grin Media
+  .container
+    .middell
+      Icon.footer__logo(name='abbott-logo')
+      a.footer__copyright(href='https://www.roostergrin.com/') © 2018 Online Advantage by Rooster Grin Media
+    .footertext
+      h1(v-html:p='props.footer_copytext')
+    .footerright
+      .allrights(v-html:p='props.footer_copyct')
+  .popup
+     .covidpopupes
+       .covidpopupes1(v-html:p='props.covied_popup1')
+       .closed x
