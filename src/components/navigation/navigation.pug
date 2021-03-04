@@ -2,20 +2,107 @@
   .navigation__background
   router-link.navigation__logo(:to='content.logo.href')
     Icon.navigation__logo-icon(:name='content.logo.icon')
-      
+
   .navigation__content
     .navigation__content-top
-      router-link.navigation__link(v-for='(link, i) in links', :key='i', :to='link.path', v-if='link.navigation' v-html='link.name', :title='link.name')
+      span.hamb_icon(onclick='openNav()')
+        i.fa.fa-bars
+      ul#mainmenu
+        li
+         router-link.navigation__link(to='/get-started',id='first', onclick='active1()') Get Started!
+          ul.submenu
+           li
+            router-link.navigation__link(to='/new-patient-paperwork', onclick='active1()') New Patient Paperwork
+        li
+         router-link.navigation__link(to='/about',id='first') About
+          ul.submenu
+           li
+            router-link.navigation__link(to='/meet-the-ro-team', onclick='active1()') Meet The RO Team
+           li
+            router-link.navigation__link(to='/community-outreach', onclick='active1()') Community Outreach
+           li
+            // router-link.navigation__link(to='/our-mission', onclick='active1()') Our Mission
+        li
+         router-link.navigation__link(to='/patient-resources',id='first') Patient Resources
+          ul.submenu
+           li
+            router-link.navigation__link(to='/life-with-ortho', onclick='active1()') Life With Ortho
+           li
+            router-link.navigation__link(to='/emergencies', onclick='active1()') Emergencies
+           li
+            router-link.navigation__link(to='/oral-hygiene', onclick='active1()') Oral Hygiene
+           li
+            router-link.navigation__link(to='/retainers', onclick='active1()') Retainers
+        li
+         router-link.navigation__link(to='/testimonials',id='first') Testimonials
+        li
+         router-link.navigation__link(to='/virtual-consultation',id='first') Virtual Consultation
+          ul.submenu
+           li
+            router-link.navigation__link(to='/a-section-to-collect-patient-information', onclick='active1()') A section to collect patient information
+           li
+            router-link.navigation__link(to='/instructions-on-how-to-take-photos-of-teeth', onclick='active1()') Instructions on how to take photos of teeth  
+      .mobile-nav-manual
+        #mobileSideNav.mobile_menu
+          a.closebtn.idw-icon-close(href='javascript:void(0)' onclick='closeNav()')
+            i.fa.fa-times
+          ul.menu
+            li
+              router-link.header-nav-item( to='/get-started' v-bind:class="{ active: isActive }") Get Started!
+              span(onclick='subMenu(1)' id='toggleClass-1' class='subMenu_open')
+                i.fa.fa-plus
+              ul.sub_menuu(id='subMenu-1' style='display:none')
+                li
+                  router-link( to='/new-patient-paperwork' v-bind:class="{ active: isActive }") 
+                    span New Patient Paperwork
+            li
+              router-link.header-nav-item( to='/About' v-bind:class="{ active: isActive }") About
+              span(onclick='subMenu(2)' id='toggleClass-2' class='subMenu_open')
+                i.fa.fa-plus
+              ul.sub_menuu(id='subMenu-2' style='display:none')
+                li
+                  router-link( to='/meet-the-ro-team' v-bind:class="{ active: isActive }") 
+                    span Meet The RO Team
+                li
+                  router-link( to='/community-outreach' v-bind:class="{ active: isActive }") 
+                    span Community Outreach
+              //  li
+               //   router-link( to='/our-mission' v-bind:class="{ active: isActive }") 
+                //    span Our Mission
+            li
+              router-link.header-nav-item( to='/patient-resources' v-bind:class="{ active: isActive }") Patient Resources
+              span(onclick='subMenu(3)' id='toggleClass-3' class='subMenu_open')
+                i.fa.fa-plus
+              ul.sub_menuu(id='subMenu-3' style='display:none')
+                li
+                  router-link( to='/life-with-ortho' v-bind:class="{ active: isActive }") 
+                    span Life With Ortho
+                li
+                  router-link( to='/emergencies' v-bind:class="{ active: isActive }") 
+                    span Emergencies
+                li
+                  router-link( to='/oral-hygiene' v-bind:class="{ active: isActive }") 
+                    span Oral Hygiene
+                li
+                  router-link( to='/retainers' v-bind:class="{ active: isActive }") 
+                    span Retainers
+            li
+              router-link.header-nav-item( to='/testimonials' v-bind:class="{ active: isActive }") Testimonials
+            li
+              router-link.header-nav-item( to='/virtual-consultation' v-bind:class="{ active: isActive }") Virtual Consultation
+              span(onclick='subMenu(4)' id='toggleClass-4' class='subMenu_open')
+                i.fa.fa-plus
+              ul.sub_menuu(id='subMenu-4' style='display:none')
+                li
+                  router-link( to='/a-section-to-collect-patient-information' v-bind:class="{ active: isActive }") 
+                    span A section to collect patient information
+                li
+                  router-link( to='/instructions-on-how-to-take-photos-of-teeth' v-bind:class="{ active: isActive }") 
+                    span Instructions on how to take photos of teeth
+ 
     .navigation__content-bottom
       a.navigation__phone(:href='content.phone.href')
         Icon.navigation__phone-icon(:name='content.phone.icon')
         span(v-html='content.phone.label')
       router-link.navigation__appointment(:to='content.appointment.href')
         span(v-html='content.appointment.label')
-  
-  .navigation__hamburger(@click='toggleNav', :class="{ 'navigation__hamburger--active': active }")
-    span
-    span
-    span
-  .navigation__drawer(@click='toggleNav', :class="{ 'navigation__drawer--active': active }")
-    router-link.navigation__mobile-link(v-for='(link, i) in links', :key='i', :class="{ 'navigation__mobile-link--active': active }", :style="{ transitionDelay: .05 * i + .2 + 's' }", :to='link.path', v-if='link.navigation' v-html='link.name', :title='link.name')

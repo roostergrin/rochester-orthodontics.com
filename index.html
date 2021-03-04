@@ -11,6 +11,7 @@
 
     <!-- Responsive META -->
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<link rel='stylesheet' id='sb-font-awesome-css' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' type='text/css' media='all' />
 
     <title>Rooster Grin Boilerplate 2.0</title>
   </head>
@@ -18,4 +19,22 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
+  <script>
+        function openNav() {
+			document.getElementById("mobileSideNav").style.width = "320px";
+		}
+		function closeNav() {
+			document.getElementById("mobileSideNav").style.width = "0";
+		}
+		function subMenu(val) {
+		var activeId = document.getElementById("toggleClass-"+val);
+        var x = document.getElementById("subMenu-"+val);
+		activeId.classList.toggle("active");
+         if (x.style.display == "none") {
+           x.style.display = "block";
+			} else {
+          x.style.display = "none";
+			}
+		}
+    </script> 
 </html>

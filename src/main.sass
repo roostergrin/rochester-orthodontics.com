@@ -25,3 +25,103 @@
 @import './base/*.sass'
 // @import './components/**/*.sass'
 @import './components/**/**/*.sass'
+
+.hamb_icon, .mobile-nav-manual
+	display: none
+
+.phone-1
+  fill: #088743 !important
+
+.footertext h1
+  font-size: 18px
+  text-align: center
+  font-weight: normal
+  color: #fff
+  font-family: gill-sans, helvetica, arial, sans-serif 
+
+.footertext h1 iframe
+  margin-top: 20px   
+	
+@media only screen and (max-width: 1169px)	
+  .navigation__content-top .hamb_icon
+    position: fixed
+    left: 0
+    top: 0
+    z-index: 999
+    width: 100%
+    background: #0b622f
+    padding-left: 10px
+    padding-top: 5px
+    padding-bottom: 5px
+  
+  .navigation #mobileSideNav, .navigation .hamb_icon
+    display: block 
+
+  .navigation .navigation__content, .mobile-nav-manual
+    display: block  
+  
+  #mainmenu
+    display: none
+
+  .navigation .mobile_menu
+    height: 100vh
+    width: 0
+    position: fixed
+    top: 0
+    left: 0
+    background-color: #092c60
+    overflow-x: hidden
+    transition: .5s
+    padding-top: 40px
+    z-index: 9999 
+
+  .navigation .mobile_menu .closebtn
+    position: absolute
+    top: 0
+    right: 10px
+    font-size: 24px
+    margin-left: 30px
+    color: #fff
+
+  .navigation .mobile_menu ul
+    margin: 0
+    padding: 0
+    display: block
+    width: 100%
+    margin-top: 0
+
+  .navigation .mobile_menu ul li
+    display: block
+    width: 100%
+    position: relative
+    text-align: left
+
+  .navigation .mobile_menu ul li
+    a, span.header-nav-item
+      padding: 8px 10px
+      text-decoration: none
+      display: block
+      transition: .3s
+      border-bottom: 1px solid #ccc
+      font-size: 15px
+      color: #fff
+      font-weight: 400
+
+  .navigation .subMenu_open
+    position: absolute
+    right: 20px
+    top: 7px
+    cursor: pointer
+    color: #fff
+
+
+  .navigation .subMenu_open.active .fa-plus::before
+    content: "\F068"
+	
+  .navigation .hamb_icon .fa-bars
+    color: #fff
+    cursor: pointer
+    display: block
+    font-size: 22px
+    width: 5%
+    z-index: 15

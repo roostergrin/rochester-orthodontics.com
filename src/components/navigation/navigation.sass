@@ -8,6 +8,38 @@
   z-index: 9998
   padding: 1rem
   width: 100%
+  
+  .navigation__content ul li
+     float: left
+     position: relative
+  .navigation__content ul
+     list-style: none
+  .navigation__content ul li a
+    font-family: kannada-bold,helvetica,arial,sans-serif
+    padding-left: 2rem
+	 
+  .navigation__content ul li .submenu
+     display: none
+     padding: 10px
+     text-align: center
+  .navigation__content ul li:hover .submenu
+     display: block
+     width: 280px
+     position: absolute
+     top: 30px
+     right: 0
+     background: #0f4eab
+     z-index: 9999
+  .navigation__content ul li .submenu a
+     padding-left: 0
+     font-size: 22px
+     line-height: 35px
+  .navigation__content ul li .submenu li
+     width: 100%
+     
+  .navigation__content ul li:last-child .submenu
+     width: 500px
+
 
   &--scrolled
     background: $light-grey-blue
@@ -56,6 +88,7 @@
         stroke: $brownish-orange
       .logo-text
         fill: $black
+	
 
   &__content
     @include tablet
