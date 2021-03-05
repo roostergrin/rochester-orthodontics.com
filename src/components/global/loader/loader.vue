@@ -9,6 +9,11 @@ export default {
       animate: false
     }
   },
+  computed: {
+    loaderimg () {
+      return this.$store.state.app.navigation
+    }
+  },
   mounted () {
     let isLoading = setInterval(() => {
       if (!this.$store.state.loading) {

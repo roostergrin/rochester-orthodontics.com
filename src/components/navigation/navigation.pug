@@ -12,7 +12,7 @@
          router-link.navigation__link(to='/get-started',id='first', onclick='active1()') Get Started!
           ul.submenu
            li
-            router-link.navigation__link(to='/new-patient-paperwork', onclick='active1()') New Patient Paperwork
+            router-link.navigation__link(to='/get-started#patientforms', onclick='active1()') New Patient Paperwork
         li
          router-link.navigation__link(to='/about',id='first') About
           ul.submenu
@@ -53,7 +53,7 @@
                 i.fa.fa-plus
               ul.sub_menuu(id='subMenu-1' style='display:none')
                 li
-                  router-link( to='/new-patient-paperwork' v-bind:class="{ active: isActive }") 
+                  router-link( to='/get-started#patientforms' v-bind:class="{ active: isActive }") 
                     span New Patient Paperwork
             li
               router-link.header-nav-item( to='/About' v-bind:class="{ active: isActive }") About
