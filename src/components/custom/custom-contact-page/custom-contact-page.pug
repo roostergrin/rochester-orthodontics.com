@@ -7,11 +7,11 @@
         .custom-contact-page__form-title(v-html='content.form.title')
         .custom-contact-page__form-body(v-html='content.form.body')
         MainForm
-        a.custom-contact-page__form-emergency(v-html='content.emergency.body', href='tel:+12486560040')
+        // a.custom-contact-page__form-emergency(v-html='content.emergency.body', href='tel:+12486560040')
     .custom-contact-page__info
       .custom-contact-page__info-content
         .custom-contact-page__info-title(v-html='content.hours.title')
         .custom-contact-page__info-hours(v-html='content.hours.body')
         a.custom-contact-page__info-button(v-for='(button, i) in content.hours.buttons', :key='"button-" + i', :href='button.href', v-html='button.label')
-  .custom-contact-page__map
-   .custom-contact-page__map-iframe(v-html='content.map')
+  // .custom-contact-page__map
+   // .custom-contact-page__map-iframe(v-html='content.map')
