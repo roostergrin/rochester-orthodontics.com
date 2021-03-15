@@ -38,10 +38,10 @@
         li
          router-link.navigation__link(to='/virtual-consultation',id='first') Virtual Consultation
           ul.submenu
-           li
-            router-link.navigation__link(to='/a-section-to-collect-patient-information', onclick='active1()') A section to collect patient information
-           li
-            router-link.navigation__link(to='/instructions-on-how-to-take-photos-of-teeth', onclick='active1()') Instructions on how to take photos of teeth  
+            //-  li
+            //-   router-link.navigation__link(to='/a-section-to-collect-patient-information', onclick='active1()') A section to collect patient information
+            li
+              router-link.navigation__link(to='/instructions-on-how-to-take-photos-of-teeth', onclick='active1()') Instructions on how to take photos at home  
       .mobile-nav-manual
         #mobileSideNav.mobile_menu
           a.closebtn.idw-icon-close(href='javascript:void(0)' onclick='closeNav()')
@@ -93,12 +93,12 @@
               span(onclick='subMenu(4)' id='toggleClass-4' class='subMenu_open')
                 i.fa.fa-plus
               ul.sub_menuu(id='subMenu-4' style='display:none')
-                li
-                  router-link( to='/a-section-to-collect-patient-information' v-bind:class="{ active: isActive }") 
-                    span A section to collect patient information
+                //- li
+                //-   router-link( to='/a-section-to-collect-patient-information' v-bind:class="{ active: isActive }") 
+                //-     span A section to collect patient information
                 li
                   router-link( to='/instructions-on-how-to-take-photos-of-teeth' v-bind:class="{ active: isActive }") 
-                    span Instructions on how to take photos of teeth
+                    span Instructions on how to take photos at home
  
     .navigation__content-bottom
       a.navigation__phone(:href='content.phone.href')

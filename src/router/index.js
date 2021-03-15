@@ -14,7 +14,7 @@ import Emergencies from '@/pages/emergencies/emergencies'
 import OralHygiene from '@/pages/oral-hygiene/oral-hygiene'
 import Retainers from '@/pages/retainers/retainers'
 import Testimonials from '@/pages/testimonials/testimonials'
-import ASectionToCollectPatientInformation from '@/pages/a-section-to-collect-patient-information/a-section-to-collect-patient-information'
+// import ASectionToCollectPatientInformation from '@/pages/a-section-to-collect-patient-information/a-section-to-collect-patient-information'
 import Contact from '@/pages/contact/contact'
 import PatientResources from '@/pages/patient-resources/patient-resources'
 import VirtualConsultation from '@/pages/virtual-consultation/virtual-consultation'
@@ -113,12 +113,12 @@ const router = new VueRouter({
       navigation: true,
       component: Invisalign
     },
-    {
-      path: '/a-section-to-collect-patient-information',
-      name: 'a-section-to-collect-patient-information',
-      navigation: true,
-      component: ASectionToCollectPatientInformation
-    },
+    // {
+    //   path: '/a-section-to-collect-patient-information',
+    //   name: 'a-section-to-collect-patient-information',
+    //   navigation: true,
+    //   component: ASectionToCollectPatientInformation
+    // },
     {
       path: '/instructions-on-how-to-take-photos-of-teeth',
       name: 'instructions-on-how-to-take-photos-of-teeth',
