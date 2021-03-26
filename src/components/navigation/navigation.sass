@@ -134,7 +134,7 @@
       @extend h2
       font-size: 24px
 
-  &__phone
+  &__phone, &__social
     @extend h3
     @extend .flex-center
     transition: transform .25s ease-in
@@ -153,6 +153,14 @@
       @include svg-size(1.25rem, 1.25rem)
       .phone-1
         fill: $marine
+  
+  &__social-icon
+    @include svg-size(2rem, 2rem)
+    margin-right: .5rem
+    fill: white
+
+    &:last-child
+      margin-right: 2rem
 
   &__appointment
     position: absolute
