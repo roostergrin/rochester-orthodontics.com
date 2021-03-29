@@ -101,8 +101,9 @@
                     span Instructions on how to take photos at home
  
     .navigation__content-bottom
-      a.navigation__social(v-for='social in content.social_media'  :href='social.href' target='_blank')
-        Icon.navigation__social-icon(:name='social.icon')
+      .navigation__social-container
+        a.navigation__social(v-for='social in content.social_media'  :href='social.href' target='_blank')
+          Icon.navigation__social-icon(:name='social.icon')
       a.navigation__phone(:href='content.phone.href')
         Icon.navigation__phone-icon(:name='content.phone.icon')
         span(v-html='content.phone.label')

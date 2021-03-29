@@ -105,7 +105,15 @@
 
   &__content-bottom
     @extend .flex-center-end
+    flex-wrap: wrap-reverse
     position: relative
+
+  &__social-container
+    @extend .flex-center-end
+    @include tablet
+      margin: 15px -30px 10px 10px
+    position: relative 
+    display: flex
 
   &__link
     @extend h3
