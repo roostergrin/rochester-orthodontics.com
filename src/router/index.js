@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '@/pages/home/home'
 import Treatments from '@/pages/treatments/treatments'
 import About from '@/pages/about/about'
+import Thankyou from '@/pages/thankyou/thankyou'
 import Invisalign from '@/pages/invisalign/invisalign'
 import GetStarted from '@/pages/get-started/get-started'
 import Newpatientpaperwork from '@/pages/new-patient-paperwork/new-patient-paperwork'
@@ -148,6 +149,12 @@ const router = new VueRouter({
       name: 'Styleguide',
       navigation: false,
       component: Styleguide
+    },
+    {
+      path: '/thank-you',
+      name: 'Thankyou',
+      navigation: false,
+      component: Thankyou
     },
     {
       path: '/patient-portal',

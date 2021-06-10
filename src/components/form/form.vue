@@ -37,6 +37,9 @@ export default {
         .then(res => {
           this.formSuccess = true
           setTimeout(() => {
+            window.location.href = '/thank-you'
+          }, 550)
+          setTimeout(() => {
             this.formSubmitted = false
           }, 1500)
           this.fullName = ''
